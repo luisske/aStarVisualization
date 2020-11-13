@@ -36,8 +36,6 @@ class Grid extends JPanel {
 				add(cell);
 			}
 		}
-		
-		
 	}
 
 	public Node getNode(int x, int y) {
@@ -80,7 +78,7 @@ class Grid extends JPanel {
 	}
 
 	private boolean isCornerBlockCheck(int x, int y) {
-		if(Math.abs(x)==0 && Math.abs(y)==0) { //TODO mögliche Fehlerquelle weil vllt 0 sein sollte
+		if(Math.abs(x)==0 && Math.abs(y)==0) {
 			return true;
 		}
 		return false;
