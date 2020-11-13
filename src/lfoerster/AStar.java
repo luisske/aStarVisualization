@@ -81,11 +81,14 @@ public class AStar {
 	private List<Node> retracePath(Node startNode, Node endNode){
 		List<Node> path = new ArrayList<>();
 		Node currentNode = endNode;
+		int pathLength = 0;
 		while(!currentNode.equals(startNode)) {
 			path.add(currentNode);
+			pathLength++;
 			currentNode = currentNode.getParent();
 		}
 		Collections.reverse(path);
+		path.remove(pathLength-1);
 		return path;
 	}
 	
