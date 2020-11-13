@@ -77,8 +77,11 @@ class Grid extends JPanel {
 		return neighbours;
 	}
 
+	/**
+	 * prevents the path from moving diagonal and "jumping" the edges
+	 */
 	private boolean isCornerBlockCheck(int x, int y) {
-		if(Math.abs(x)==0 && Math.abs(y)==0) {
+		if(Math.abs(x)==1 && Math.abs(y)==1) {
 			return true;
 		}
 		return false;
