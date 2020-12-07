@@ -24,11 +24,16 @@ public class MainFrame extends JFrame {
 
 		Grid field = new Grid(b);
 		AStar astar = new AStar(field);
-		List<Node> pathList = astar.getList();
 		
-		for(Node node : pathList) {
-			node.setBackground(Node.pink);
+		try {
+			List<Node> pathList = astar.getList();
+			for(Node node : pathList) {
+				node.setBackground(Node.pink);
+			}
+		} catch (Exception e) {
+			System.out.println("Error: No path was found!");
 		}
+		
 		
 		add(field, BorderLayout.CENTER);
 		pack();
